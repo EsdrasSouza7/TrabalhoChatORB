@@ -40,7 +40,7 @@ while True:
         received_resposta = chat.calculadora(expressao)
         print(f"Resposa recebida do servidor: {received_resposta}")
         received_resposta = str(received_resposta)
-        mensagem = (expressao + '=' + received_resposta)
+        mensagem = (expressao + ' = ' + received_resposta)
         chat.sendMessage(username, mensagem)
 
     elif choice == '4':
