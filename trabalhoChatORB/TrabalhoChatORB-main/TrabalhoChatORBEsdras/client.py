@@ -17,7 +17,9 @@ while True:
     if message.lower() == 'exit':
         break
     if message.lower() == "calculadora":
-        chat.calculadora()
+        expressao = input("Digite uma expressão (ou 'sair' para encerrar): ")
+        received_resposta = chat.calculadora(expressao)
+        print(f"Resposa recebida do servidor: {received_resposta}")
     chat.sendMessage(message)
 
     received_message = chat.receiveMessage()

@@ -14,17 +14,14 @@ class ChatServer(ChatApp__POA.Chat):
             return self.messages.pop(0)
         else:
             return "No messages"
-#tentar tirar o pop para ver se aparece no outro cliente
-    def calculadora(self):
-        # Solicitação de entrada do usuário
-        expressao = input("Digite uma expressão (ou 'sair' para encerrar): ")
-
+    #tentar tirar o pop para ver se aparece no outro cliente
+    def calculadora(self, expressao):
         try:
             # Avalia a expressão e imprime o resultado
             resultado = eval(expressao)
         except Exception as e:
             # Se houver um erro, imprime uma mensagem de erro
-            resultado = "Erro ao calcular a expressão:", e
+            return  "Erro ao calcular a expressão:", e
         return resultado
 
 
