@@ -16,8 +16,9 @@ chat.joinChat(username)
 while True:
     print("1. Send a message")
     print("2. List users")
-    print("3. Leave chat")
-    choice = input("Choose an option (1/2/3): ")
+    print("3. Send private message")
+    print("4. Leave chat")
+    choice = input("Choose an option (1/2/3/4): ")
 
     if choice == '1':
         message = input("Enter your message (or 'exit' to quit): ")
@@ -33,6 +34,11 @@ while True:
         print("Users online:", users)
 
     elif choice == '3':
+        receiver = input("Enter the username of the recipient: ")
+        message = input("Enter your private message: ")
+        chat.sendDirectMessage(username, receiver, message)
+
+    elif choice == '4':
         chat.leaveChat(username)
         break
 
